@@ -3,6 +3,10 @@ class JournalsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
   # GET /journals or /journals.json
 
+  def index
+    @journals=Journal.find_by("client_id":1);
+    render json: @journals, status: :created
+  end
   # POST /journals or /journals.json
   def create
     @journal = Journal.new(journal_params)

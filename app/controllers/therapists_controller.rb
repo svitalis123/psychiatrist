@@ -7,7 +7,9 @@ class TherapistsController < ApplicationController
     @therapist = Therapist.new(therapist_params)
 
       if @therapist.save
-        render json: @therapist, status: :created
+        payload={therapist_id: @therapist.id}
+        token = encode_token(payload)
+        render json: {client: @therapist, jwt:token, status: :created}
       else
         render json: @therapist.errors, status: :unprocessable_entity
       end
@@ -44,6 +46,6 @@ class TherapistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def therapist_params
-      params.permit(:firstname, :lastname, :email, :bio)
+      params.permit(:firstname, :lastname, :email, :bio, :password)
     end
 end
