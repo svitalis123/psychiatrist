@@ -10,9 +10,9 @@ class AuthController < ApplicationController
       elsif @therapist&.authenticate(params[:password])
         payload = { therapist_id: @therapist.id }
         token = encode_token(payload)
-        render json: { user: @therapist, jwt: token, success: "Welcome back, #{@therapist.email}" }
+        render json: { client: @therapist, jwt: token, success: "Welcome back, #{@therapist.email}" }
       else
-        render json: { failure: 'Log in failed! Username or password invalid!' }
+        render json: { failure: 'Log in failed! Username or password invalid!', status: :unprocessable_entity }
       end
     end
     

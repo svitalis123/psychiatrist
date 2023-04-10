@@ -61,10 +61,10 @@ const SignUpForm = () => {
   };
   const isLoading = status === 'loading';
   return (
-    <div className="mx-auto p-8 w-80">
-      <h1 className="text-xl font-bold mb-4">Sign Up</h1>
-      <form className="ui form" onSubmit={handleSubmit}>
-        <div className="mb-4">
+    <div className="mx-auto p-8 w-80 signin_container">
+      <h1 className="text-xl font-bold mb-4 signin_container_h1">Sign Up</h1>
+      <form className="ui form signin_container_form" onSubmit={handleSubmit}>
+        <div className="mb-4 signin_container_form_div1">
           <label htmlFor="username-input" className="block text-gray-700 font-bold mb-2">
             Firstname
             <input
@@ -72,12 +72,12 @@ const SignUpForm = () => {
               value={firstname}
               onChange={handleFirstNameChange}
               type="text"
-              placeholder="username"
+              placeholder="firstname"
               className="border border-gray-400 p-2 w-full rounded-lg"
             />
           </label>
         </div>
-        <div className="mb-4">
+        <div className="mb-4 signin_container_form_div1">
           <label htmlFor="username-input" className="block text-gray-700 font-bold mb-2">
             Lastname
             <input
@@ -85,12 +85,12 @@ const SignUpForm = () => {
               value={lastname}
               onChange={handleLastNameChange}
               type="text"
-              placeholder="username"
+              placeholder="lastname"
               className="border border-gray-400 p-2 w-full rounded-lg"
             />
           </label>
         </div>
-        <div className="mb-4">
+        <div className="mb-4 signin_container_form_div1">
           <label htmlFor="username-input" className="block text-gray-700 font-bold mb-2">
             Email
             <input
@@ -103,7 +103,7 @@ const SignUpForm = () => {
             />
           </label>
         </div>
-        <div className="mb-4">
+        <div className="mb-4 signin_container_form_div1">
           <label htmlFor="username-input" className="block text-gray-700 font-bold mb-2">
             Age
             <input
@@ -116,7 +116,7 @@ const SignUpForm = () => {
             />
           </label>
         </div>
-        <div className="mb-4">
+        <div className="mb-4 signin_container_form_div1">
           <label htmlFor="username-input" className="block text-gray-700 font-bold mb-2">
             condition
             <input
@@ -129,7 +129,7 @@ const SignUpForm = () => {
             />
           </label>
         </div>
-        <div className="mb-4">
+        <div className="mb-4 signin_container_form_div1">
           <label htmlFor="password-input" className="block text-gray-700 font-bold mb-2">
             Password
             <input
@@ -143,7 +143,7 @@ const SignUpForm = () => {
           </label>
         </div>
 
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded signin_container_form_div1_btns" type="submit">
          {isLoading ? 'Loading' : ' Sign Up'}
         </button>
         {error && <p className="text-red-500">{error}</p>}

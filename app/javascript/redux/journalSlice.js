@@ -1,21 +1,23 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+// import { useSelector } from 'react-redux';
+// const user = useSelector((state) => (state.auth.client ? state.auth.client : null));
+// console.log("this is", user)
 const initialState = {
   formData: [],
   isLoading: false,
 };
 
-const SERVICES_URL = 'http://127.0.0.1:8000/clients/1/journals';
+// const SERVICES_URL = `http://127.0.0.1:8000/clients/1/journals`;
 
-export const fetchServices = createAsyncThunk('FETCH_SERVICES', async () => {
-  const response = await fetch(SERVICES_URL);
+export const fetchServices = createAsyncThunk('FETCH_SERVICES', async (id) => {
+  const response = await fetch(`http://127.0.0.1:8000/clients/${id}/journals`);
   const data = await response.json();
   console.log("backend",data)
   return data;
 });
 
 export const postServices = createAsyncThunk('POST_SERVICES', async ({data }) => {
-  const req = await fetch(SERVICES_URL, {
+  const req = await fetch(`http://127.0.0.1:8000/clients/${data.id}/journals`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

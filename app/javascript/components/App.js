@@ -9,6 +9,7 @@ import Footer from './Footer'
 import JournalForm from './JournalForm'
 import Loginsignup from './SignUpLogin'
 import { useDispatch, useSelector } from 'react-redux';
+import CasenoteChild from './CasenoteChild';
 
 
 function App() {
@@ -24,10 +25,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Loginsignup/>}/>
           <Route path="/home" element={<Home />}/>
-          <Route path="journal" element={<Journal />}/>
-          <Route path="casenote" element={<Casenote />}/>
-          <Route path="journalform" element={<JournalForm />}/>
-          <Route path="casenoteform" element={<CasenoteForm />}/>
+          <Route path="/journal" element={<Journal />}/>
+          <Route path="/casenotechild/:id"  element={<CasenoteChild/>}/>
+          <Route path="/casenote" element={<Casenote />}/>
+          <Route path="/journalform" element={<JournalForm />}/>
+          <Route path="/casenoteform/:id/:user" element={<CasenoteForm />}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

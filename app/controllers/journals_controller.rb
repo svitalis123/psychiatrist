@@ -4,13 +4,13 @@ class JournalsController < ApplicationController
   # GET /journals or /journals.json
 
   def index
-    @journals=Journal.find_by("client_id":1);
+    @journals=Journal.all();
     render json: @journals, status: :created
   end
   # POST /journals or /journals.json
   def create
     @journal = Journal.new(journal_params)
-    @journal.client_id = 1
+    @journal.client_id = params[:id]
       if @journal.save
         render json: @journal, status: :created
       else

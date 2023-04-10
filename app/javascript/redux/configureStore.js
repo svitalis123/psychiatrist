@@ -1,6 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import thunkMiddleware from 'redux-thunk';
 import loggerMiddleware from 'redux-logger';
+import casenoteSlice from './casenoteSlice';
 import journalSlice from './journalSlice';
 import authSlice, { setToken } from './auth/authSlice';
 
@@ -21,6 +22,7 @@ const loadTokenMiddleware = (store) => {
 };
 
 const rootReducer = combineReducers({
+  casenote: casenoteSlice,
   journal: journalSlice,
   auth: authSlice
 });

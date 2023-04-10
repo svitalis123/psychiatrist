@@ -66,6 +66,14 @@ html {
     width: 100%;
 }
 
+.casenote_container,
+.journal_container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
 .toggler {
     display: none;
 }
@@ -194,8 +202,6 @@ footer {
 .casenote_container_section_one {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    width: 90vw;
 }
 
 .journal_container_section_one_title,
@@ -317,6 +323,113 @@ footer {
     color: #c8a247;
 }
 
+.butoon_download {
+    width: 20%;
+    padding: 0.3rem 0.5rem;
+    margin: auto;
+    background-color: #A79B97;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.butoon_download:hover {
+    background-color: #fff;
+    color: #A79B97;
+}
+
+.sp_container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+}
+
+.sp_container_subdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.sp_container_subdiv_inner2 {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.sp_container_subdiv_inner2 > button,
+.signin_container_form_div1_btns {
+    padding: 0.3rem 0.5rem;
+    background-color: #08bd6f;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s;
+    border: none;
+    border-radius: 4px;
+}
+
+.sp_container_subdiv_inner2 > button:hover,
+.signin_container_form_div1_btns:hover {
+    background-color: #fff;
+    color: #A79B97;
+}
+
+.signin_container,
+.signt_container,
+.logint_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin_container_form,
+.signt_container_form,
+.logint_container_form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.signin_container_form_div1,
+.signt_container_form_div,
+.logint_container_form_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin_container_form_div1 > label,
+.signt_container_form_div > label,
+.logint_container_form_div> label,
+.form-group  {
+    display: grid;
+    gap: 0.5rem;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.signin_container_form_div1 > label > input,
+.signt_container_form_div > label > input,
+.logint_container_form_div> label > input,
+.form_group_case_input,
+.formcontrol_action {
+    padding: 0.5rem;
+
+}
+
+.container_journal_form,
+.caseform_container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+.journalform-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
 @media (max-width: 576px) {
     .form-input {
         font-size: 1rem;
@@ -334,5 +447,31 @@ footer {
         font-size: 1rem;
         padding: 0.5rem 1rem;
         margin-top: 1rem;
+        background: #a79b97;
     }
+}
+
+@media only screen and (min-width: 678px) {
+    .main_app_container_section_two_big_holder {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .journal_container_article,
+    .casenote_container_article {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    
+}
+
+@media only screen and (min-width: 1330px) {
+    
 }

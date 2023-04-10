@@ -1,23 +1,8 @@
 import React from 'react';
-import axios from 'axios';
 import { HashLink } from 'react-router-hash-link/dist/react-router-hash-link.cjs.production';
 
 function Home() {
   
-    const handleDownload = async () => {
-        const response = await axios.get(`http://127.0.0.1:8000/clients/show.pdf`, {
-            responseType: 'blob',
-          });
-          const blob = new Blob([response.data], { type: 'application/pdf' });
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.setAttribute('download', 'client.pdf');
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-    }
-   
   return (
     <main className="main_app_container">
     {/* first section styling */}
@@ -31,7 +16,6 @@ function Home() {
       <p className="main_app_container_first_section_p_tag">
         Own up and <HashLink className="main_app_container_first_section_p_tag_a" to="/" smooth>Sema 🔊</HashLink>
       </p>
-      <button onClick={handleDownload}>Download</button>
     </section>
 
     {/* end of section one */}
