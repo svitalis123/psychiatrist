@@ -2,11 +2,16 @@ class CasenotesController < ApplicationController
   before_action :set_casenote, only: %i[ show edit update destroy ]
   skip_before_action :verify_authenticity_token, only: [:create]
   
+
+  def index
+    @casenotes = Casenote.all
+    render json: @casenotes
+  end
   # POST /casenotes or /casenotes.json
   def create
     @casenote = Casenote.new(casenote_params)
-    @casenote.therapist_id = 1
-    @casenote.client_id = 1
+    @casenote.therapist_id = params[:id]
+    @casenote.client_id = params[:client_id]
       if @casenote.save
         render json: @casenote, status: :created
       else
@@ -45,6 +50,6 @@ class CasenotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def casenote_params
-      params.permit(:content, :sessiondatetime)
+      params.permit(:content)
     end
 end
