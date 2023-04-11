@@ -193,6 +193,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   bootsnap
+  bundler
   debug
   jbuilder
   jsbundling-rails
