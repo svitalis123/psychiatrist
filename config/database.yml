@@ -87,8 +87,8 @@ production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
 
-production:
-  <<: *default
-  database: psychiatrist_production
-  username: psychiatrist
-  password: <%= ENV["PSYCHIATRIST_DATABASE_PASSWORD"] %>
+# production:
+#   <<: *default
+#   database: psychiatrist_production
+#   username: psychiatrist
+#   password: <%= ENV["PSYCHIATRIST_DATABASE_PASSWORD"] %>
