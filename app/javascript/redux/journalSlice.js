@@ -10,14 +10,14 @@ const initialState = {
 // const SERVICES_URL = `http://127.0.0.1:8000/clients/1/journals`;
 
 export const fetchServices = createAsyncThunk('FETCH_SERVICES', async (id) => {
-  const response = await fetch(`http://127.0.0.1:8000/clients/${id}/journals`);
+  const response = await fetch(`postgres://sema:zAK4NXvVWLs3irjaUBgO1ib27nDNpqqi@dpg-cgq0i1m4dad9donv0dj0-a/sema/clients/${id}/journals`);
   const data = await response.json();
   console.log("backend",data)
   return data;
 });
 
 export const postServices = createAsyncThunk('POST_SERVICES', async ({data }) => {
-  const req = await fetch(`http://127.0.0.1:8000/clients/${data.id}/journals`, {
+  const req = await fetch(`postgres://sema:zAK4NXvVWLs3irjaUBgO1ib27nDNpqqi@dpg-cgq0i1m4dad9donv0dj0-a/sema/clients/${data.id}/journals`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -28,7 +28,7 @@ function Casenote() {
     // );
   }
   const handleDownload = async () => {
-      const response = await axios.get(`http://127.0.0.1:8000/clients/show.pdf`, {
+      const response = await axios.get(`postgres://sema:zAK4NXvVWLs3irjaUBgO1ib27nDNpqqi@dpg-cgq0i1m4dad9donv0dj0-a/sema/clients/show.pdf`, {
         responseType: 'blob',
       });
       const blob = new Blob([response.data], { type: 'application/pdf' });
